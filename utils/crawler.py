@@ -46,7 +46,7 @@ def prepareCrawl(ci, folderPath, tsList):
 
 def startCrawl(ci, folderPath, downloadList):
     # 同時建立及啟用 20 個執行緒
-    round = 20
+    round = 0
     while (downloadList != []):
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
             executor.map(partial(scrape, ci, folderPath,
