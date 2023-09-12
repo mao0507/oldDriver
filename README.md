@@ -42,6 +42,9 @@ pip freeze > requirements.txt
 ```
 
 
-# 靈感來源 
+# 大量參考來源 
 
 https://github.com/hcjohn463/JableTVDownload
+
+
+
