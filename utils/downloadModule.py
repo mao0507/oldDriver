@@ -64,7 +64,7 @@ def Download_m3u8(url,title,folderPath) :
   # 刪除m3u8 file
   deleteM3u8(folderPath)
   # 合成mp4
-  mergeMp4(folderPath, tsList)
+  mergeMp4(folderPath, tsList,title)
   # 刪除子mp4
   deleteMp4(folderPath)
   # 進行轉檔
@@ -83,7 +83,7 @@ def Download_m3u8_with_selenium(url):
     return
   if not os.path.exists('video/'+dirName):
       os.makedirs('video/'+dirName)
-  folderPath = os.path.join(os.getcwd(), 'video/'+dirName)
+  folderPath = os.path.join(os.getcwd(), 'video', dirName)
   
   #配置Selenium參數
   options = Options()
@@ -148,7 +148,7 @@ def Download_m3u8_with_selenium(url):
   prepareCrawl(ci, folderPath, tsList)
 
   # 合成mp4
-  mergeMp4(folderPath, tsList)
+  mergeMp4(folderPath, tsList,dirName)
   
   # 刪除子mp4
   deleteMp4(folderPath)
