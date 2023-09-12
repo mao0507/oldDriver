@@ -33,7 +33,8 @@ def deleteM3u8(folderPath):
         if file.endswith('.m3u8'):
             os.remove(os.path.join(folderPath, file))
             
-def mergeMp4(folderPath, tsList):
+            
+def mergeMp4(folderPath, tsList,video_name):
     # 開始時間
     start_time = time.time()
     print('開始合成影片..')
@@ -41,7 +42,7 @@ def mergeMp4(folderPath, tsList):
     for i in range(len(tsList)):
         file = tsList[i].split('/')[-1][0:-3] + '.mp4'
         full_path = os.path.join(folderPath, file)
-        video_name = folderPath.split(os.path.sep)[-1]
+        #video_name = folderPath.split(os.path.sep)[-1].split('/')[1]
         if os.path.exists(full_path):
             with open(full_path, 'rb') as f1:
                 with open(os.path.join(folderPath, video_name + '.mp4'), 'ab') as f2:
@@ -55,17 +56,15 @@ def mergeMp4(folderPath, tsList):
     
 def goConver(fileName):
     # 前往指定資料夾
-    cd = 'cd ' + fileName
+    cd = 'cd ' + 'video/'+ fileName
     os.system(cd)
 
     # 做出路徑
-    path = os.path.join(fileName, fileName)
-
-    # print(path)
+    path = os.path.join('video',fileName,fileName)
 
     # 進行 轉換檔案
-    shell_ffmpeg = 'ffmpeg -i ' + path + \
-        '.mp4 -c:v libx264 -b:v 2M -threads 5 -preset superfast ' + path + '_N.mp4'
+    shell_ffmpeg = 'ffmpeg -i ' + path + '.mp4 -c:v libx264 -b:v 2M -threads 10 -preset superfast ' + path + '_N.mp4'
+        
 
     # print(shell_ffmpeg)
     os.system(shell_ffmpeg)
