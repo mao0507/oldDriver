@@ -12,9 +12,11 @@ def message(type):
     
 # 建立資料夾
 def createdFolder(title):
-  if not os.path.exists(title):
-      os.makedirs(title)
-  folderPath = os.path.join(os.getcwd(), title)
+  if not os.path.exists('video/' + title):
+      os.makedirs('video/'+title)
+  folderPath = os.path.join(os.getcwd(), 'video', title)
+  
+  print(folderPath)
   
   return folderPath
 
