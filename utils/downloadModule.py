@@ -30,7 +30,7 @@ def Download_m3u8(url,title,folderPath) :
   urllib.request.urlretrieve(m3u8url, m3u8file)
   
   # 得到 m3u8 file裡的 URI和 IV
-  m3u8obj = m3u8.load('./'+ title +'/playlist.m3u8')
+  m3u8obj = m3u8.load('./video/'+ title +'/playlist.m3u8')
   m3u8uri = ''
   m3u8iv = ''
   
