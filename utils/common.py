@@ -1,6 +1,7 @@
 
 import os
 import time
+from selenium.webdriver.chrome.options import Options
 
 #  整理 可通用的提示訊息
 def message(type):
@@ -8,7 +9,6 @@ def message(type):
     print('請輸入網址。')
   elif type == 1 :
     print('尚未支援所輸入的網站。')
-    
     
 # 建立資料夾
 def createdFolder(title):
@@ -35,7 +35,7 @@ def deleteM3u8(folderPath):
         if file.endswith('.m3u8'):
             os.remove(os.path.join(folderPath, file))
             
-            
+# 合併檔案         
 def mergeMp4(folderPath, tsList,video_name):
     # 開始時間
     start_time = time.time()
@@ -55,7 +55,7 @@ def mergeMp4(folderPath, tsList,video_name):
     print('花費 {0:.2f} 秒合成影片'.format(end_time - start_time))
     print('下載完成!')
     
-    
+# 進行轉檔
 def goConver(fileName):
     # 前往指定資料夾
     cd = 'cd ' + 'video/'+ fileName
@@ -72,3 +72,15 @@ def goConver(fileName):
     os.system(shell_ffmpeg)
 
     print('轉換完成。')
+
+# Selenium 設定檔
+def SeleniumOption():
+    
+    options = Options()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-extensions')
+    options.add_argument('--headless')
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")
+    
+    return options

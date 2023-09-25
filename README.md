@@ -5,7 +5,13 @@
 * [Avple.tv](https://avple.tv/?asgtbndr=1) 
 * [jable.tv](https://jable.tv/)
 
-#  *此項目僅為個人練習項目，本人一概不付任何責任*
+2023/09/26 更新 :
+* 直接輸入 playlist.m3u8 / index.m3u8 網址，可以直接抓取檔案
+
+
+---
+
+#  *此項目僅為個人練習項目，本人一概不付任何責任，若有侵權相關問題，皆為使用者個人行為*
 ### 以此 [專案](https://github.com/hcjohn463/JableTVDownload) 參考， 進行修改
 
 ### 使用套件 :
@@ -14,6 +20,11 @@
 * requests
 * m3u8
 * pycryptodome
+* urllib.request
+* Crypto.Cipher
+* selenium
+* ssl
+
 
 ### 安裝 ffmpeg
 
@@ -34,7 +45,6 @@ python main.py
 ```
 
 ### 輸入網址，並耐心等待
-
 
 ---
 

@@ -3,13 +3,13 @@ import bs4
 import requests
 from utils.config import headers
 from utils.common import createdFolder
-from utils.downloadModule import Download_m3u8
+from utils.downloadModule import Download_m3u8_with_requests
 
 def start(url):
   #print(url)
   title = getTitle(url)
   folderPath = createdFolder(title)
-  Download_m3u8(url,title,folderPath)
+  Download_m3u8_with_requests(url,title,folderPath)
   
 def getTitle(url):
    # 請求網頁資料
