@@ -18,7 +18,7 @@ def classification(url):
     # 輸入 檔案名稱
     title = input('請輸入檔案名稱 : ')
     print('依照所提供的 m3u8 網址，來進行下載')
-    fileName = title.replace(' ', '').replace('）', ')').replace('（', '(').replace('&', '_').replace('/', '').replace('?', '_')
+    fileName = title.replace(' ', '').replace('）', ')').replace('（', '(').replace('&', '_').replace('/', '').replace('?', '_').replace('*','')
     # 執行功能
     playList.start(url,fileName)
     

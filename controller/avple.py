@@ -19,7 +19,7 @@ def getTitle(url):
     # 取得網頁節點
     html = bs4.BeautifulSoup(req.text, 'html.parser')
     # 取得網頁標籤 並做處理
-    title = html.title.getText().split('|')[0].replace(' ', '').replace('）', ')').replace('（', '(').replace('&', '_').replace('/', '').replace('?', '_')
+    title = html.title.getText().split('|')[0].replace(' ', '').replace('）', ')').replace('（', '(').replace('&', '_').replace('/', '').replace('?', '_').replace('*','')
        
     
     
